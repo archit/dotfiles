@@ -35,3 +35,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/Users/archit/.rvm/gems/ruby-1.9.3-p125/bin:/Users/archit/.rvm/gems/ruby-1.9.3-p125@global/bin:/Users/archit/.rvm/rubies/ruby-1.9.3-p125/bin:/Users/archit/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/archit/Library/android-sdk/tools:/Users/archit/Library/android-sdk/platform-tools
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
