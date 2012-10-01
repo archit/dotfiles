@@ -39,4 +39,4 @@ export PATH=/Users/archit/.rvm/gems/ruby-1.9.3-p125/bin:/Users/archit/.rvm/gems/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+export EDITOR='emacsclient'
