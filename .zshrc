@@ -40,3 +40,6 @@ export PATH=/Users/archit/.rvm/gems/ruby-1.9.3-p125/bin:/Users/archit/.rvm/gems/
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 export EDITOR='emacsclient'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
