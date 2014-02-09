@@ -32,19 +32,18 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git mac ruby)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-
-PATH=$HOME/bin:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/Library/android-sdk/tools:$HOME/Library/android-sdk/platform-tools
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-export EDITOR='emacsclient'
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export EDITOR='emacsclient'
+export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+export EC2_HOME=/Users/archit/Applications/ec2-api-tools-1.6.11.0
+export PATH=$EC2_HOME/bin:$PATH
