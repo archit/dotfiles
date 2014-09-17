@@ -37,7 +37,7 @@ plugins=(git mac ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/Library/android-sdk/tools:$HOME/Library/android-sdk/platform-tools
+export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
@@ -47,3 +47,4 @@ export EDITOR='vi'
 export EC2_HOME=/Users/archit/Applications/ec2-api-tools-1.6.11.0
 export PATH=~/.cabal/bin:$EC2_HOME/bin:$PATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home
+export PATH=/Applications/Android\ Studio.app/sdk/platform-tools:~/Library/android-sdk/tools:$HOME/Library/android-sdk/platform-tools:$PATH
