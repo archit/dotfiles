@@ -1,3 +1,16 @@
 [user]
 	name = Archit Baweja
 	email = archit@waltznetworks.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	df = diff
+	lg = log
+[github]
+	user = architbaweja@gmail.com
