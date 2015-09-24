@@ -44,6 +44,6 @@ export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/u
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 export EDITOR='vi'
-export EC2_HOME=/Users/archit/Applications/ec2-api-tools-1.6.11.0
+export EC2_HOME=/Users/archit/Applications/ec2-api-tools-1.7.3.0
 export PATH=~/.cabal/bin:$EC2_HOME/bin:$PATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home
