@@ -35,3 +35,4 @@ URxvt.color7: #EEEEEE
 URxvt.color15: #FFFFFF
 
 URxvt.scrollBar: false
+URxvt.geometry: 160x45
