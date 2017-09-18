@@ -1,6 +1,7 @@
 [user]
 	name = Archit Baweja
 	email = archit@waltznetworks.com
+	signingkey = F03D375EEC6FFF68
 [core]
 	editor = vim
 [color]
