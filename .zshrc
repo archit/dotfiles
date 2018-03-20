@@ -49,10 +49,12 @@ export PATH=~/.cabal/bin:$EC2_HOME/bin:$PATH
 if [[ "$unamestr" == 'Linux' ]]; then
    export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
-   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home
+   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
 fi
 export GOROOT=/usr/lib/go
 export GOPATH=~/go
-export PATH=/Applications/Android\ Studio.app/sdk/platform-tools:~/Library/android-sdk/tools:$HOME/Library/android-sdk/platform-tools:$GOPATH/bin:$PATH
+export PATH="/usr/local/opt/node@6/bin:$JAVA_HOME/bin:$GOPATH/bin:$PATH"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+export PATH=$PATH:/Users/archit/bin
+#source '/Users/archit/lib/azure-cli/az.completion'
