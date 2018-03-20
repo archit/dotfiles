@@ -5,6 +5,8 @@
 --ignore-dir=.git
 --ignore-dir=.svn
 --ignore-dir=.idea
+--ignore-dir=bower_components
+--ignore-dir=node_modules
 
 # sort results by filename
 --sort-files
