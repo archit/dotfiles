@@ -51,10 +51,8 @@ if [[ "$unamestr" == 'Linux' ]]; then
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
 fi
-export GOROOT=/usr/lib/go
+export GOROOT=/usr/local/go
 export GOPATH=~/go
-export PATH="/usr/local/opt/node@6/bin:$JAVA_HOME/bin:$GOPATH/bin:$PATH"
+export PATH="/usr/local/opt/node@6/bin:$JAVA_HOME/bin:$GOPATH/bin:$PATH":~/bin
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
-export PATH=$PATH:/Users/archit/bin
-#source '/Users/archit/lib/azure-cli/az.completion'
