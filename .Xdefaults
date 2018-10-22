@@ -61,7 +61,7 @@ URxvt.scrollStyle: rxvt
 URxvt.scrollBar: false
 URxvt.geometry: 160x45
 
-Emacs.geometry: 160x45
+Emacs.geometry: 202x45
 Emacs.letterSpace: -1
 Emacs.font: Dejavu Sans Mono:pixelsize=13:Regular
 Emacs.boldFont: Dejavu Sans Mono:pixelsize=13:Bold
