@@ -37,15 +37,13 @@ plugins=(git mac ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/Projects/buck/bin
+export PATH=$HOME/.cabal/bin:$HOME/.cargo/bin:/snap/bin:$HOME/.rvm/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/Projects/buck/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 export EDITOR='vi'
-export EC2_HOME=/Users/archit/Applications/ec2-api-tools-1.7.3.0
-export PATH=~/.cabal/bin:$EC2_HOME/bin:$PATH
 if [[ "$unamestr" == 'Linux' ]]; then
    export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
@@ -69,7 +67,7 @@ load-nvmrc() {
 
         if [ "$nvmrc_node_version" = "N/A" ]; then
             nvm install
-        elif [ "$nvmrc_node_version" = "$node_version" ]; then
+        elif [ "$nvmrc_node_version" != "$node_version" ]; then
             nvm use
         fi
     elif [ "$node_version" != "$(nvm version default)" ]; then
