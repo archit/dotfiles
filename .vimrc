@@ -20,7 +20,7 @@ Bundle 'Valloric/YouCompleteMe'
 " Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'junegunn/fzf'
@@ -73,13 +73,6 @@ if 'VIRTUAL_ENV' in os.environ:
   exec(compile(open(activate_this, "rb").read(), activate_this, 'exec'), dict(__file__=activate_this))
 EOF
 
-" if has('gui_running')
-"  set background=dark
-  colorscheme solarized
-" else
-"  colorscheme zenburn
-"endif
-
-call togglebg#map("<F5>")
+colorscheme nord
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
