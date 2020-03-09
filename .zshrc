@@ -49,7 +49,6 @@ if [[ "$unamestr" == 'Linux' ]]; then
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
 fi
-export GOROOT=/usr/local/go
 export GOPATH=~/go
 export PATH="/usr/local/opt/node@6/bin:$JAVA_HOME/bin:$GOPATH/bin:$PATH":~/bin
 alias pbcopy='xsel --clipboard --input'
@@ -91,3 +90,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/archit/google-cloud-sdk/path.zsh.inc' ]; then . '/home/archit/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/archit/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/archit/google-cloud-sdk/completion.zsh.inc'; fi
