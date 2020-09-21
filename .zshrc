@@ -37,26 +37,39 @@ plugins=(git osx ruby macports)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/Projects/buck/bin:$HOME/.cabal/bin:$HOME/.cargo/bin:$HOME/.rvm/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export EDITOR='vi'
+
+if [[ "$unamestr" == 'Linux' ]]; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+[[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh # This loads NVM
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-export EDITOR='vi'
+export GOPATH=~/go
+
 if [[ "$unamestr" == 'Linux' ]]; then
    export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
 fi
-export GOPATH=~/go
-export PATH="/usr/local/opt/node@6/bin:$JAVA_HOME/bin:$GOPATH/bin:$PATH":~/bin
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="~/bin:$JAVA_HOME/bin:$GOPATH/bin:$PATH"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 autoload -U add-zsh-hook
+# Auto instantiate the appropriate NodeJS version based on project folder
 load-nvmrc() {
     local node_version="$(nvm version)"
     local nvmrc_path="$(nvm_find_nvmrc)"
@@ -82,17 +95,15 @@ load-virtualenv() {
         source venv/bin/activate
     fi
 }
+# Auto instantiate the appropriate python virtualenv version based on project folder
 add-zsh-hook chpwd load-virtualenv
-alias psc='ps xawf -eo pid,user,cgroup,args'
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+
+if [[ "$unamestr" == 'Linux' ]]; then
+  alias psc='ps xawf -eo pid,user,cgroup,args'
 fi
+
+# Tell FZF in Vim to use ripgrep instead
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/archit/google-cloud-sdk/path.zsh.inc' ]; then . '/home/archit/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/archit/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/archit/google-cloud-sdk/completion.zsh.inc'; fi
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
