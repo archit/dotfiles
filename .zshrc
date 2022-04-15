@@ -32,14 +32,14 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby macports)
+plugins=(git osx ruby macports docker docker-compose tmux)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export EDITOR='vi'
 
-if [[ "$unamestr" == 'Linux' ]]; then
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
 fi
@@ -50,10 +50,10 @@ fi
 
 export GOPATH=~/go
 
-if [[ "$unamestr" == 'Linux' ]]; then
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
    export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-elif [[ "$unamestr" == 'FreeBSD' ]]; then
-   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
+elif [[ "$unamestr" == "darwin"* ]]; then
+   export JAVA_HOME=/build/toolchain/mac32/jdk-1.8.0_121/Contents/Home
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"
