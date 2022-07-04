@@ -32,7 +32,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby macports nvm)
+plugins=(git osx ruby macports nvm pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,6 +48,7 @@ fi
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 export GOPATH=~/go
+export PATH="$PATH:$GOPATH/bin"
 
 if [[ "$unamestr" == 'Linux' ]]; then
    export JAVA_HOME=/usr/lib/jvm/java-8-oracle
@@ -55,22 +56,7 @@ elif [[ "$unamestr" == 'FreeBSD' ]]; then
    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
 fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="~/bin:$JAVA_HOME/bin:$GOPATH/bin:$PATH"
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-autoload -U add-zsh-hook
-load-virtualenv() {
-    if [ -d "venv" ]; then
-        source venv/bin/activate
-    fi
-}
-# Auto instantiate the appropriate python virtualenv version based on project folder
-add-zsh-hook chpwd load-virtualenv
 
 if [[ "$unamestr" == 'Linux' ]]; then
   alias psc='ps xawf -eo pid,user,cgroup,args'
