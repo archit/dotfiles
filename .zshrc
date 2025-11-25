@@ -72,3 +72,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Docker Desktop CLIs
+export PATH="$HOME/.docker/bin:$PATH"
+
+# Claude Code
+export PATH="$HOME/.local/bin:$PATH"
+
+# Antigravity
+export PATH="/Users/archit/.antigravity/antigravity/bin:$PATH"
