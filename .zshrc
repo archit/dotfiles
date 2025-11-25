@@ -80,4 +80,4 @@ export PATH="$HOME/.docker/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Antigravity
-export PATH="/Users/archit/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
