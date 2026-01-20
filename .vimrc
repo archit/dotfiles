@@ -24,6 +24,7 @@ syntax enable
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set number
 
 " Enable folding
 set foldmethod=indent
