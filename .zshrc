@@ -39,22 +39,13 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export EDITOR='vim'
 
-if [[ "$unamestr" == 'Linux' ]]; then
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
-fi
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 export GOPATH=~/go
 export PATH="$PATH:$GOPATH/bin"
 
-if [[ "$unamestr" == 'Linux' ]]; then
-   export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-elif [[ "$unamestr" == 'FreeBSD' ]]; then
-   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
-fi
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH="~/bin:$JAVA_HOME/bin:$GOPATH/bin:$PATH"
 
